@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    tools {
-    maven 'maven-3.9.11'
-    }
+    // tools {
+    // maven 'maven-3.9.11'
+    // }
     stages {
         stage('Test') {
             steps {
@@ -21,7 +21,7 @@ pipeline {
             post {
                 success {
                     echo "Now Archiving the Artifacts....."
-                    archiveArtifacts artifacts: '**/*.jar'
+                    archiveArtifacts artifacts: '**/*.jar' 
                 }
             }
         }
